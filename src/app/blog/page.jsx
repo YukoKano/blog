@@ -1,7 +1,13 @@
+import { Container } from "@/components/Container";
+
 const { Hero } = require("@/components/Hero");
 
 const Blog = () => {
-  return <Hero title="blog" subtitle="recent posts" />;
+  return (
+    <Container>
+      <Hero title="blog" subtitle="recent posts" />;
+    </Container>
+  );
 };
 
 export default Blog;

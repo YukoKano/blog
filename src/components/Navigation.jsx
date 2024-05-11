@@ -1,9 +1,10 @@
 import Link from "next/link";
+import styles from "@/styles/Navigation.module.css";
 
 export const Navigation = () => {
   return (
     <nav>
-      <ul>
+      <ul className={styles.list}>
         <li>
           <Link href="/">home</Link>
         </li>
