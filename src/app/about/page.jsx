@@ -8,11 +8,13 @@ import {
   TwoColumnsMain,
   TwoColumnsSidebar,
 } from "@/components/TwoColumns";
+import { ImageComponent } from "@/components/ImageComponent";
 
 const About = () => {
   return (
     <Container>
       <Hero title="about" subtitle="about development activities" />
+      <ImageComponent />
       <TwoColumns>
         <TwoColumnsMain>
           <PostBody>
