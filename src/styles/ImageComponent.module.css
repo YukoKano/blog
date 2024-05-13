@@ -2,11 +2,11 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .figure {
     width: 50%;
   }
-}
+} */
 
 .blur {
   filter: blur(8px);

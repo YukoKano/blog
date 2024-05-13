@@ -13,6 +13,8 @@ export const Hero = ({ title, subtitle, imageOn = false }) => {
       {imageOn && (
         <ImageComponent
           imagePath={eyecatch}
+          imageWidth="1190"
+          imageHeight="1190"
           sizes={"(min-width: 1152px) 576px, 100vw"}
           isPriority
         />
