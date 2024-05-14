@@ -7,9 +7,12 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const Social = () => {
+export const Social = ({ iconSize = "initial" }) => {
   return (
-    <ul className={styles.list}>
+    //  "--icon-size": iconSizeの書き方できるんだ
+    // rootの中に--icon-sizeで宣言しなくてもカスタムプロパティになる？
+    // ↑GPTに聞いたら「そのセレクタ内や子孫要素内でのみ有効なローカル変数として機能します。」らしい
+    <ul className={styles.list} style={{ "--icon-size": iconSize }}>
       <li>
         <a href="https://twitter.com/?lang=ja">
           <FontAwesomeIcon icon={faTwitter} />
