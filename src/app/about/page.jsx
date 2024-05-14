@@ -17,6 +17,8 @@ const About = () => {
       <Hero title="about" subtitle="about development activities" />
       <ImageComponent
         imagePath={eyecatch}
+        imageWidth="1280"
+        imageHeight="853"
         sizes={"(min-width: 1152px) 1152px, 100vw"}
         isPriority
       />
