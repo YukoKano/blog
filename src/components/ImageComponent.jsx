@@ -5,7 +5,13 @@ import Image from "next/image";
 
 import styles from "@/styles/ImageComponent.module.css";
 
-export const ImageComponent = ({ imagePath, sizes, isPriority }) => {
+export const ImageComponent = ({
+  imagePath,
+  imageWidth,
+  imageHeight,
+  sizes,
+  isPriority,
+}) => {
   const [isImageLoading, setIsImageLoading] = useState(true);
   return (
     // ①layout="responsive"は使えなくなったので、styles属性でwidth, heightを指定する必要がある
@@ -20,6 +26,8 @@ export const ImageComponent = ({ imagePath, sizes, isPriority }) => {
       <Image
         src={imagePath}
         alt=""
+        width={imageWidth}
+        height={imageHeight}
         sizes={sizes}
         style={{ width: "100%", height: "auto" }}
         onLoad={() => setIsImageLoading(false)}
