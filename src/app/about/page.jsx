@@ -11,6 +11,11 @@ import {
 } from "@/components/TwoColumns";
 import { ImageComponent } from "@/components/ImageComponent";
 
+export const metadata = {
+  title: "About",
+  description: "About page",
+};
+
 const About = () => {
   return (
     <Container>
