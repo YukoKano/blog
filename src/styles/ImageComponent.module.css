@@ -1,0 +1,19 @@
+.figure {
+  width: 100%;
+}
+
+/* @media (min-width: 768px) {
+  .figure {
+    width: 50%;
+  }
+} */
+
+.blur {
+  filter: blur(8px);
+  transition: filter 0.3s ease-in;
+}
+
+.removeBlur {
+  filter: blur(0);
+  transition: filter 0.3s ease-in;
+}

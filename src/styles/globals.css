@@ -44,6 +44,14 @@ h3 {
   font-size: var(--heading3);
 }
 
+/* next/image */
+/* span > img {
+  transition: 0.2s;
+} */
+/* 使えなくなった↑ */
+
+/* 現状blurをアニメーションさせるには、　https://www.meje.dev/blog/nextjs-image-blur-on-load が良さそう */
+
 body,
 h1,
 h2,

@@ -2,17 +2,26 @@ import { Contact } from "@/components/Contact";
 import { Container } from "@/components/Container";
 import { Hero } from "@/components/Hero";
 import { PostBody } from "@/components/PostBody";
+import eyecatch from "@/images/about.jpg";
 
 import {
   TwoColumns,
   TwoColumnsMain,
   TwoColumnsSidebar,
 } from "@/components/TwoColumns";
+import { ImageComponent } from "@/components/ImageComponent";
 
 const About = () => {
   return (
     <Container>
       <Hero title="about" subtitle="about development activities" />
+      <ImageComponent
+        imagePath={eyecatch}
+        imageWidth="1280"
+        imageHeight="853"
+        sizes={"(min-width: 1152px) 1152px, 100vw"}
+        isPriority
+      />
       <TwoColumns>
         <TwoColumnsMain>
           <PostBody>
