@@ -12,7 +12,8 @@ export const ImageComponent = ({
   sizes,
   isPriority,
 }) => {
-  const [isImageLoading, setIsImageLoading] = useState(true);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     // ①layout="responsive"は使えなくなったので、styles属性でwidth, heightを指定する必要がある
     // https://nextjs.org/docs/app/api-reference/components/image#responsive-image-using-a-static-import
@@ -30,8 +31,8 @@ export const ImageComponent = ({
         height={imageHeight}
         sizes={sizes}
         style={{ width: "100%", height: "auto" }}
-        onLoad={() => setIsImageLoading(false)}
-        className={`${isImageLoading ? styles.blur : styles.removeBlur}`}
+        className={`${isImageLoaded ? styles.removeBlur : styles.blur}`}
+        onLoad={() => setIsImageLoaded(true)}
         priority={isPriority}
       />
     </figure>
