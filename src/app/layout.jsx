@@ -15,7 +15,7 @@ export const metadata = {
   description: "The official Next.js Learn Dashboard built with App Router",
   // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"), // デフォルト値が自動で設定される 相対パスを利用できるようにする
   icons: {
-    icon: "/icon.ico", // TODO:うまくいかない
+    icon: "/icon.ico", // public/favicon.icoだとうまくいかなかったなんで？ リネームして解決した→　https://qiita.com/nisaji/items/5aaa4b743dc5bf668e8a
     shortcut: "/icon.ico",
   },
   generator: "Next.js",
