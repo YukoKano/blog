@@ -13,11 +13,15 @@ export const metadata = {
     default: "Cube",
   },
   description: "The official Next.js Learn Dashboard built with App Router",
-  // metadataBase: new URL("https://next-learn-dashboard.vercel.sh"), // デフォルト値が自動で設定される 相対パスを利用できるようにする
+  // metadataBase: new URL("https://hogehoge.com"), // デフォルト値が自動で設定される 相対パスを利用できるようにする
+  // alternates: {
+  //   canonical: "/",
+  // },
   icons: {
     icon: "/icon.ico", // public/favicon.icoだとうまくいかなかったなんで？ リネームして解決した→　https://qiita.com/nisaji/items/5aaa4b743dc5bf668e8a
     shortcut: "/icon.ico",
   },
+  type: "website",
   generator: "Next.js",
   applicationName: "Blog Page",
   referrer: "origin-when-cross-origin", // これもあまりよくわからん
