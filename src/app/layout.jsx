@@ -3,14 +3,16 @@ import "@/styles/globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
+// fontAwesome
+import "@fortawesome/fontawesome-svg-core/styles.css"; // グローバルスタイルとしてサイト全体に適用
+import { config } from "@fortawesome/fontawesome-svg-core"; // SVGコアが個別にCSS適用するのを無効化
 config.autoAddCss = false;
 
 // 書籍が古かったので下記を参照
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 // 動的にもできる：https://nextjs.org/docs/app/building-your-application/optimizing/metadata#dynamic-metadata
+
 export const metadata = {
   title: {
     template: "%s | Cube", // %sは特定のページタイトルに置き換えられる
