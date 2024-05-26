@@ -1,7 +1,6 @@
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 import styles from "@/styles/Footer.module.css";
-import { Social } from "./Social";
 
 export const Footer = () => {
   return (
@@ -9,7 +8,7 @@ export const Footer = () => {
       <Container>
         <div className={styles.flexContainer}>
           <Logo />
-          <Social />
+          [social]
         </div>
       </Container>
     </footer>
