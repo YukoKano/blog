@@ -3,6 +3,10 @@ import "@/styles/globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 // 書籍が古かったので下記を参照
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
