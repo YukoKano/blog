@@ -56,6 +56,8 @@ export default async function Schedule({ params }) {
   const slug = params.slug;
   const post = await getPostBySlug(slug);
 
+  if (!post.title || !post.subtitle) return null;
+
   return (
     <Container>
       <article>
