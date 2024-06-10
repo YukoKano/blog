@@ -12,6 +12,7 @@ config.autoAddCss = false;
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 // 動的にもできる：https://nextjs.org/docs/app/building-your-application/optimizing/metadata#dynamic-metadata
+
 export const metadata = {
   title: {
     template: "%s | Cube", // %sは特定のページタイトルに置き換えられる
