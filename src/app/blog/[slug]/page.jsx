@@ -1,5 +1,8 @@
-import { ConvertBody } from "@/components/ConvertBody";
+import Image from "next/image";
 import { getPostBySlug } from "../../../../lib/api";
+import { extractText } from "../../../../lib/extract-text";
+
+import { ConvertBody } from "@/components/ConvertBody";
 import { Container } from "@/components/Container";
 import { PostBody } from "@/components/PostBody";
 import { PostHeader } from "@/components/PostHeader";
@@ -8,8 +11,45 @@ import {
   TwoColumnsMain,
   TwoColumnsSidebar,
 } from "@/components/TwoColumns";
-import Image from "next/image";
 import { PostCategory } from "@/components/PostCategory";
+
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
+  const post = await getPostBySlug(slug);
+  const { title, pageTitle, publishDate: publish, content, categories } = post;
+
+  const pageDesc = extractText(content);
+  const eyecatch = post.eyecatch ?? "";
+
+  const ogpTitle = `${pageTitle} | Cube`;
+  // const ogpUrl = new URL(`/blog/${slug}`, "siteUrl").toString();
+
+  const metadata = {
+    title: pageTitle,
+    description: pageDesc,
+
+    openGraph: {
+      title: ogpTitle,
+      description: pageDesc,
+      // url: ogpUrl,
+      images: [
+        {
+          url: eyecatch.url,
+          width: eyecatch.width,
+          height: eyecatch.height,
+        },
+      ],
+    },
+
+    twitter: {
+      title: ogpTitle,
+      description: pageDesc,
+      images: [eyecatch.url],
+    },
+  };
+
+  return metadata;
+}
 
 export default async function Schedule({ params }) {
   // paramsを持ってくれば勝手にslugゲットできるの便利
