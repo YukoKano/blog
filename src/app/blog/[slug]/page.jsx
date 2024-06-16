@@ -1,4 +1,4 @@
-import { getPostBySlug } from "../../../../lib/api";
+import { getAllSlugs, getPostBySlug } from "../../../../lib/api";
 import { extractText } from "../../../../lib/extract-text";
 
 import { eyecatchLocal } from "../../../../lib/constants";
@@ -15,8 +15,18 @@ import {
 import { PostCategory } from "@/components/PostCategory";
 import { ImageComponent } from "@/components/ImageComponent";
 
+export const dynamicParams = false;
+export async function generateStaticParams() {
+  const allSlugs = await getAllSlugs();
+
+  return allSlugs.map(({ slug }) => {
+    return { slug: slug };
+  });
+}
+
 export async function generateMetadata({ params }) {
   const slug = params.slug;
+
   const post = await getPostBySlug(slug);
   const { title, pageTitle, publishDate: publish, content, categories } = post;
 
