@@ -14,13 +14,15 @@ import {
 } from "@/components/TwoColumns";
 import { PostCategory } from "@/components/PostCategory";
 import { ImageComponent } from "@/components/ImageComponent";
+import { prevNextPost } from "../../../../lib/prev-next-post";
+import { Pagenation } from "@/components/Pagenation";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
   const allSlugs = await getAllSlugs();
 
+  // returnいるんだ
   return allSlugs.map(({ slug }) => {
-    // returnいるんだ
     return { slug: slug };
   });
 }
@@ -68,6 +70,8 @@ export default async function Post({ params }) {
   // paramsを持ってくれば勝手にslugゲットできるの便利
   const slug = params.slug;
   const post = await getPostBySlug(slug);
+  const allSlugs = await getAllSlugs();
+  const [prevPost, nextPost] = prevNextPost(allSlugs, slug);
 
   const eyecatch = post.eyecatch ?? eyecatchLocal;
 
@@ -101,6 +105,12 @@ export default async function Post({ params }) {
             <PostCategory categories={post.categories} />
           </TwoColumnsSidebar>
         </TwoColumns>
+        <Pagenation
+          prevText={prevPost.title}
+          prevUrl={`/blog/${prevPost.slug}`}
+          nextText={nextPost.title}
+          nextUrl={`/blog/${nextPost.slug}`}
+        />
       </article>
     </Container>
   );
