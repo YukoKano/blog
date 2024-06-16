@@ -2,6 +2,7 @@ import styles from "@/styles/Hero.module.css";
 import { ImageComponent } from "./ImageComponent";
 
 import eyecatch from "/public/images/coffee-barista.png";
+// import eyecatch from "../../public/images/coffee-barista.png";はOK
 // import eyecatch from "/images/coffee-barista.png";は読み込めない
 
 export const Hero = ({ title, subtitle, imageOn = false }) => {
