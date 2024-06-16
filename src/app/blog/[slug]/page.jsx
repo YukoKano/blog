@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { getPostBySlug } from "../../../../lib/api";
 import { extractText } from "../../../../lib/extract-text";
+
+import { eyecatchLocal } from "../../../../lib/constants";
 
 import { ConvertBody } from "@/components/ConvertBody";
 import { Container } from "@/components/Container";
@@ -12,6 +13,7 @@ import {
   TwoColumnsSidebar,
 } from "@/components/TwoColumns";
 import { PostCategory } from "@/components/PostCategory";
+import { ImageComponent } from "@/components/ImageComponent";
 
 export async function generateMetadata({ params }) {
   const slug = params.slug;
@@ -19,7 +21,7 @@ export async function generateMetadata({ params }) {
   const { title, pageTitle, publishDate: publish, content, categories } = post;
 
   const pageDesc = extractText(content);
-  const eyecatch = post.eyecatch ?? "";
+  const eyecatch = post.eyecatch ?? eyecatchLocal;
 
   const ogpTitle = `${pageTitle} | Cube`;
   // const ogpUrl = new URL(`/blog/${slug}`, "siteUrl").toString();
@@ -51,10 +53,12 @@ export async function generateMetadata({ params }) {
   return metadata;
 }
 
-export default async function Schedule({ params }) {
+export default async function Post({ params }) {
   // paramsを持ってくれば勝手にslugゲットできるの便利
   const slug = params.slug;
   const post = await getPostBySlug(slug);
+
+  const eyecatch = post.eyecatch ?? eyecatchLocal;
 
   if (!post.title || !post.publishDate) return null;
 
@@ -66,16 +70,13 @@ export default async function Schedule({ params }) {
           subtitle="Blog Article"
           publish={post.publishDate}
         />
-        <figure>
-          <Image
-            src={post.eyecatch.url}
-            alt=""
-            width={post.eyecatch.width}
-            height={post.eyecatch.height}
-            style={{ width: "100%", height: "auto" }}
-            priority
-          />
-        </figure>
+        <ImageComponent
+          imagePath={eyecatch.url}
+          imageWidth={eyecatch.width}
+          imageHeight={eyecatch.height}
+          sizes={"(min-width: 1152px) 1152px, 100vw"}
+          isPriority
+        />
         <TwoColumns>
           <TwoColumnsMain>
             <PostBody>

@@ -1,9 +1,12 @@
 import styles from "@/styles/Hero.module.css";
 import { ImageComponent } from "./ImageComponent";
 
-import eyecatch from "@/images/coffee-barista.png";
+import eyecatch from "/public/images/coffee-barista.png";
+// import eyecatch from "/images/coffee-barista.png";は読み込めない
 
 export const Hero = ({ title, subtitle, imageOn = false }) => {
+  // const eyecatch = "/images/coffee-barista.png";
+
   return (
     <div className={styles.flexContainer}>
       <div className={styles.text}>
