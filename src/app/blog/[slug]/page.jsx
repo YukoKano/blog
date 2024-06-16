@@ -20,6 +20,7 @@ export async function generateStaticParams() {
   const allSlugs = await getAllSlugs();
 
   return allSlugs.map(({ slug }) => {
+    // returnいるんだ
     return { slug: slug };
   });
 }
