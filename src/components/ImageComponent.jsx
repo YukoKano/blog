@@ -34,6 +34,7 @@ export const ImageComponent = ({
         className={`${isImageLoaded ? styles.removeBlur : styles.blur}`}
         onLoad={() => setIsImageLoaded(true)}
         priority={isPriority}
+        key={imagePath}
       />
     </figure>
   );
