@@ -34,7 +34,7 @@ export const ImageComponent = ({
         className={`${isImageLoaded ? styles.removeBlur : styles.blur}`}
         onLoad={() => setIsImageLoaded(true)}
         priority={isPriority}
-        key={imagePath}
+        // key={imagePath} ブラー処理を変えたので別のものと認識させる必要がなくなった、これいるか？
       />
     </figure>
   );
