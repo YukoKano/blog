@@ -18,6 +18,7 @@ import { prevNextPost } from "../../../../lib/prev-next-post";
 import { Pagenation } from "@/components/Pagenation";
 
 export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const allSlugs = await getAllSlugs();
 
