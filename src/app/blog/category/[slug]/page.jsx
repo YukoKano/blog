@@ -25,7 +25,12 @@ export default async function Category({ params }) {
 
   const name = category.name;
 
-  // const posts = await getAllPostsByCategories(category.id); // こいつが配列じゃないらしい？エラー出て困ってる idが違う？
+  try {
+    const posts = await getAllPostsByCategories(category.id); // こいつが配列じゃないらしい？エラー出て困ってる idが違う？
+    console.log(posts);
+  } catch (err) {
+    console.log(err);
+  }
   // for (const post of posts) {
   //   if (!post.hasOwnProperty("eyecatch")) {
   //     post.eyecatch = eyecatchLocal;
