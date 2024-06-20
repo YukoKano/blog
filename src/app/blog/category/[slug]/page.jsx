@@ -1,6 +1,11 @@
 import { Container } from "@/components/Container";
 import { PostHeader } from "@/components/PostHeader";
-import { getAllCategories } from "../../../../../lib/api";
+import {
+  getAllCategories,
+  getAllPostsByCategories,
+} from "../../../../../lib/api";
+import { eyecatchLocal } from "../../../../../lib/constants";
+import { Posts } from "@/components/Posts";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -20,9 +25,15 @@ export default async function Category({ params }) {
     ({ slug: categorySlug }) => categorySlug === slug // ここの書き方合ってるか自信ない
   );
 
+  const posts = await getAllPostsByCategories(slug); // こいつが配列じゃないらしい
+  for (const post of posts) {
+    if (!post.hasOwnProperty("eyecatch")) post.eyecatch = eyecatchLocal;
+  }
+
   return (
     <Container>
       <PostHeader title={category.name} subtitle="Blog Category" />
+      <Posts posts={posts} />
     </Container>
   );
 }
