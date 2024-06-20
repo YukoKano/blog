@@ -18,22 +18,24 @@ export async function generateStaticParams() {
 }
 
 export default async function Category({ params }) {
-  const slug = params.slug;
+  const catSlug = params.slug;
 
   const allCategories = await getAllCategories();
-  const category = allCategories.find(
-    ({ slug: categorySlug }) => categorySlug === slug // ここの書き方合ってるか自信ない
-  );
+  const category = allCategories.find(({ slug }) => slug === catSlug);
 
-  const posts = await getAllPostsByCategories(slug); // こいつが配列じゃないらしい
-  for (const post of posts) {
-    if (!post.hasOwnProperty("eyecatch")) post.eyecatch = eyecatchLocal;
-  }
+  const name = category.name;
+
+  // const posts = await getAllPostsByCategories(category.id); // こいつが配列じゃないらしい？エラー出て困ってる idが違う？
+  // for (const post of posts) {
+  //   if (!post.hasOwnProperty("eyecatch")) {
+  //     post.eyecatch = eyecatchLocal;
+  //   }
+  // }
 
   return (
     <Container>
-      <PostHeader title={category.name} subtitle="Blog Category" />
-      <Posts posts={posts} />
+      <PostHeader title={name} subtitle="Blog Category" />
+      {/* <Posts posts={posts} /> */}
     </Container>
   );
 }
