@@ -1,10 +1,7 @@
 import { Container } from "@/components/Container";
 import { PostHeader } from "@/components/PostHeader";
-import {
-  getAllCategories,
-  getAllPostsByCategories,
-} from "../../../../../lib/api";
-import { eyecatchLocal } from "../../../../../lib/constants";
+import { getAllCategories, getAllPostsByCategories } from "/lib/api";
+import { eyecatchLocal } from "/lib/constants";
 import { Posts } from "@/components/Posts";
 
 export const dynamicParams = false;

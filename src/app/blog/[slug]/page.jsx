@@ -1,7 +1,7 @@
-import { getAllSlugs, getPostBySlug } from "../../../../lib/api";
-import { extractText } from "../../../../lib/extract-text";
+import { getAllSlugs, getPostBySlug } from "/lib/api";
+import { extractText } from "/lib/extract-text";
 
-import { eyecatchLocal } from "../../../../lib/constants";
+import { eyecatchLocal } from "/lib/constants";
 
 import { ConvertBody } from "@/components/ConvertBody";
 import { Container } from "@/components/Container";
@@ -14,7 +14,7 @@ import {
 } from "@/components/TwoColumns";
 import { PostCategory } from "@/components/PostCategory";
 import { ImageComponent } from "@/components/ImageComponent";
-import { prevNextPost } from "../../../../lib/prev-next-post";
+import { prevNextPost } from "/lib/prev-next-post";
 import { Pagenation } from "@/components/Pagenation";
 
 export const dynamicParams = false;

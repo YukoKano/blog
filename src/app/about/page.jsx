@@ -2,7 +2,7 @@ import { Contact } from "@/components/Contact";
 import { Container } from "@/components/Container";
 import { Hero } from "@/components/Hero";
 import { PostBody } from "@/components/PostBody";
-import eyecatch from "../../../public/images/about.jpg";
+import eyecatch from "/public/images/about.jpg";
 
 import {
   TwoColumns,

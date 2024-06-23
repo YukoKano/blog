@@ -1,9 +1,9 @@
 import { Container } from "@/components/Container";
-import { getAllPosts } from "../../../lib/api";
+import { getAllPosts } from "/lib/api";
 import { Posts } from "@/components/Posts";
 
 import { Hero } from "@/components/Hero";
-import { eyecatchLocal } from "../../../lib/constants";
+import { eyecatchLocal } from "/lib/constants";
 
 export default async function Blog() {
   const posts = await getAllPosts();
