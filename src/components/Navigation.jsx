@@ -9,10 +9,10 @@ export const Navigation = () => {
           <Link href="/">home</Link>
         </li>
         <li>
-          <Link href="about">about</Link>
+          <Link href="/about">about</Link>
         </li>
         <li>
-          <Link href="blog">blog</Link>
+          <Link href="/blog">blog</Link>
         </li>
       </ul>
     </nav>
