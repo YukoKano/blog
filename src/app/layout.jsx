@@ -2,10 +2,12 @@ import "@/styles/globals.css";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import * as gtag from "lib/gtag";
 
 // fontAwesome
 import "@fortawesome/fontawesome-svg-core/styles.css"; // グローバルスタイルとしてサイト全体に適用
 import { config } from "@fortawesome/fontawesome-svg-core"; // SVGコアが個別にCSS適用するのを無効化
+import Script from "next/script";
 config.autoAddCss = false;
 
 // 書籍が古かったので下記を参照
@@ -48,6 +50,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja">
+      <head>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
+        ></Script>
+        {/* TODO: ここにさらにScript追加する */}
+      </head>
       <body>
         <Header />
         <main>{children}</main>
