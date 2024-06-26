@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import * as gtag from "lib/gtag";
+import * as gtag from "/lib/gtag";
 
 // fontAwesome
 import "@fortawesome/fontawesome-svg-core/styles.css"; // グローバルスタイルとしてサイト全体に適用
