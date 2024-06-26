@@ -29,7 +29,7 @@ export const Accordion = ({ heading, children }) => {
         style={{
           "--text-height": refText.current
             ? `${refText.current.scrollHeight}px`
-            : "0px", // 読み込んで最初に↑が処理されるとマウント途中だからrefがなくてエラーになる
+            : "0px", // 読み込んで最初に↑が処理されるとマウント途中だからrefがなくてエラーになる refの初期値を{scrollHeight: 0}としておくこともできる
         }}
       >
         <div className={styles.textInner}>{children}</div>
