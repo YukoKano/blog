@@ -3,7 +3,7 @@
 import styles from "@/styles/Accordion.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export const Accordion = ({ heading, children }) => {
   const [textIsOpen, setTextIsOpen] = useState(false);
@@ -11,6 +11,9 @@ export const Accordion = ({ heading, children }) => {
   const toggleText = () => {
     setTextIsOpen((prev) => !prev);
   };
+
+  const refText = useRef(null);
+
   return (
     <div className={textIsOpen ? styles.open : styles.close}>
       <h3 className={styles.heading}>
@@ -20,7 +23,15 @@ export const Accordion = ({ heading, children }) => {
           <FontAwesomeIcon icon={faCircleChevronDown} className={styles.icon} />
         </button>
       </h3>
-      <div className={styles.text}>
+      <div
+        className={styles.text}
+        ref={refText}
+        style={{
+          "--text-height": refText.current
+            ? `${refText.current.scrollHeight}px`
+            : "0px", // 読み込んで最初に↑が処理されるとマウント途中だからrefがなくてエラーになる
+        }}
+      >
         <div className={styles.textInner}>{children}</div>
       </div>
     </div>
