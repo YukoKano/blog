@@ -19,7 +19,7 @@ export const Navigation = () => {
   return (
     <nav className={navIsOpen ? styles.open : styles.close}>
       {navIsOpen && (
-        // なんだこの書き方……
+        // なんだこの書き方…… ←styled-jsxというらしい、globalをつけるとスコープなくできる
         <style jsx global>{`
           @media (max-width: 767px) {
             body {
