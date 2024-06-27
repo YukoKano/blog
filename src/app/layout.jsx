@@ -55,7 +55,17 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
         ></Script>
-        {/* TODO: ここにさらにScript追加する */}
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.datalayer = window.datalayer || [];
+            function gtag(){datalayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_MEASUREMENT_ID}')
+          `,
+          }}
+        />
       </head>
       <body>
         <Header />
