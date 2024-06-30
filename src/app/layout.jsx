@@ -5,8 +5,8 @@ import "@/styles/globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-import { GA_MEASUREMENT_ID } from "/lib/gtag";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GA_MEASUREMENT_ID, GA_ID } from "/lib/gtag";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 // fontAwesome
 import "@fortawesome/fontawesome-svg-core/styles.css"; // グローバルスタイルとしてサイト全体に適用
@@ -58,6 +58,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="ja">
       <GoogleTagManager gtmId={GA_MEASUREMENT_ID} />
+      <GoogleAnalytics gaId={GA_ID} />
       <body>
         <Header />
         <main>{children}</main>
