@@ -8,8 +8,6 @@ import { usePathSendGtm } from "@/hooks/usePathSendGtm";
 export const GoogleTag = () => {
   usePathSendGtm();
 
-  console.log("GTM & GA Tag Init");
-
   return (
     <>
       <GoogleTagManager gtmId={GA_MEASUREMENT_ID} />
