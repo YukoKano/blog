@@ -7,7 +7,7 @@
   font-size: var(--body);
 }
 
-.heading button {
+button.heading {
   all: unset;
   outline: revert;
   -webkit-tap-highlight-color: transparent;
