@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 // fontAwesome
 import "@fortawesome/fontawesome-svg-core/styles.css"; // グローバルスタイルとしてサイト全体に適用
 import { config } from "@fortawesome/fontawesome-svg-core"; // SVGコアが個別にCSS適用するのを無効化
+import { GoogleTag } from "@/components/GoogleTag";
 config.autoAddCss = false;
 
 // 書籍が古かったので下記を参照
@@ -45,9 +46,10 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="ja">
+      <GoogleTag />
       <body>
         <Header />
         <main>{children}</main>
@@ -55,4 +57,6 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

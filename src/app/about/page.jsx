@@ -10,6 +10,7 @@ import {
   TwoColumnsSidebar,
 } from "@/components/TwoColumns";
 import { ImageComponent } from "@/components/ImageComponent";
+import { Accordion } from "@/components/Accordion";
 
 export const metadata = {
   title: "About",
@@ -49,11 +50,23 @@ const About = () => {
             <p>
               形は元も先も同じように太い。云わば細長い腸詰めのような物が、ぶらりと顔のまん中からぶら下っている
             </p>
-            <p>これは、ダミーです。</p>å
-            <p>これは、ダミーです。これは、ダミーです。これは、ダミーです。</p>
-            <p>これは、ダミーです。これは、ダミーです。これは、ダミーです。</p>
-            <p>これは、ダミーです。</p>
-            <p>これは、ダミーです。これは、ダミ</p>
+
+            <h2>FAQ</h2>
+            <Accordion heading="プログラミングのポイントについて">
+              <p>
+                形は元も先も同じように太い。云わば細長い腸詰めのような物が、ぶらりと顔のまん中からぶら下っている
+              </p>
+            </Accordion>
+            <Accordion heading="プログラミングのポイントについて2">
+              <p>
+                形は元も先も同じように太い。云わば細長い腸詰めのような物が、ぶらりと顔のまん中からぶら下っている
+              </p>
+            </Accordion>
+            <Accordion heading="プログラミングのポイントについて3">
+              <p>
+                形は元も先も同じように太い。云わば細長い腸詰めのような物が、ぶらりと顔のまん中からぶら下っている
+              </p>
+            </Accordion>
           </PostBody>
         </TwoColumnsMain>
         <TwoColumnsSidebar>
