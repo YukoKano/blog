@@ -16,13 +16,10 @@ export const Accordion = ({ heading, children }) => {
 
   return (
     <div className={textIsOpen ? styles.open : styles.close}>
-      <div>
-        {/* h3にbutton……？ */}
-        <button onClick={toggleText} className={styles.heading}>
-          {heading}
-          <FontAwesomeIcon icon={faCircleChevronDown} className={styles.icon} />
-        </button>
-      </div>
+      <button onClick={toggleText} className={styles.heading}>
+        {heading}
+        <FontAwesomeIcon icon={faCircleChevronDown} className={styles.icon} />
+      </button>
       <div
         className={styles.text}
         ref={refText}
